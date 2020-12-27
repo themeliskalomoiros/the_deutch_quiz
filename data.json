@@ -2,16 +2,313 @@
   "words" : [
       {
         "text" : "Wort",
-        "translation" : "Word"
+        "translation" : "the word",
+        "structure" : 0
+      },
+      {
+        "text" : "Bild",
+        "translation" : "the picture",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "hören",
+        "translation" : "hear",
+        "structure" : 1
+      },
+      {
+        "text" : "noch",
+        "translation" : "still",
+        "structure" : 2
+      }
+      ,
+      {
+        "text" : "einmal",
+        "translation" : "once",
+        "structure" : 2
+      }
+      ,
+      {
+        "text" : "ankreuzen",
+        "translation" : "mark with a cross",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Kreuz",
+        "translation" : "the cross",
+        "structure" : 0
+      },
+      {
+        "text" : "ordnen",
+        "translation" : "organize",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "ergänzen",
+        "translation" : "complete",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "machen",
+        "translation" : "do",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Kurs",
+        "translation" : "the course",
+        "structure" : 0
+      },
+      {
+        "text" : "sprechen",
+        "translation" : "speak",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Sprache",
+        "translation" : "the language",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "lesen",
+        "translation" : "read",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Gespräch",
+        "translation" : "the conversation",
+        "structure" : 0
+      },
+      {
+        "text" : "spielen",
+        "translation" : "play",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "Spiel",
+        "translation" : "the game",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "suchen",
+        "translation" : "search",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "Suche",
+        "translation" : "the search",
+        "structure" : 0
+      },
+      {
+        "text" : "zeigen",
+        "translation" : "demonstrate, show",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "fragen",
+        "translation" : "ask",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Frage",
+        "translation" : "the question",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "Fragezeichen",
+        "translation" : "the question mark - '?'",
+        "structure" : 0
+      },
+      {
+        "text" : "Zeichen",
+        "translation" : "character, sign",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "zeichnen",
+        "translation" : "draw",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "markieren",
+        "translation" : "mark",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Markierung",
+        "translation" : "the marking",
+        "structure" : 0
+      },
+      {
+        "text" : "raten",
+        "translation" : "guess",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Lektion",
+        "translation" : "the lesson",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "meinen",
+        "translation" : "think, believe, mean",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Meinung",
+        "translation" : "the opinion, the view, the mind",
+        "structure" : 0
+      },
+      {
+        "text" : "Meind",
+        "translation" : "the mind",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "sagen",
+        "translation" : "say, tell, speak",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Saga",
+        "translation" : "the saga, the story",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "notieren",
+        "translation" : "note",
+        "structure" : 1
+      },
+      {
+        "text" : "vergleichen",
+        "translation" : "compare",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "erzählen",
+        "translation" : "tell",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "gleich",
+        "translation" : "equal",
+        "structure" : 2
+      }
+      ,
+      {
+        "text" : "",
+        "translation" : "",
+        "structure" : 0
+      },
+      {
+        "text" : "",
+        "translation" : "",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "",
+        "translation" : "",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "schreiben",
+        "translation" : "write",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "variieren",
+        "translation" : "vary",
+        "structure" : 1
+      },
+      {
+        "text" : "Zahl",
+        "translation" : "the number",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "Nummer",
+        "translation" : "the number",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "arbeiten",
+        "translation" : "work",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Arbeit",
+        "translation" : "the job",
+        "structure" : 0
+      },
+      {
+        "text" : "Verbinden",
+        "translation" : "connect",
+        "structure" : 1
+      }
+      ,
+      {
+        "text" : "Binding",
+        "translation" : "the bond",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "Antwort",
+        "translation" : "the answer",
+        "structure" : 0
+      }
+      ,
+      {
+        "text" : "antworten",
+        "translation" : "to answer",
+        "structure" : 0
+      },
+      {
+        "text" : "aber",
+        "translation" : "but",
+        "structure" : 3
+      }
+      ,
+      {
+        "text" : "weil",
+        "translation" : "",
+        "structure" : 3
       }
   ],
 
   "structure" : [
     "noun",
-    "article",
-    "adgective",
-    "pronoun",
     "verb",
-    "preposition"
+    "adverb",
+    "conjunction"
   ]
 }
