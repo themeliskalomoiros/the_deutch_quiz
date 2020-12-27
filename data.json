@@ -4,5 +4,14 @@
         "text" : "Wort",
         "translation" : "Word"
       }
+  ],
+
+  "structure" : [
+    "noun",
+    "article",
+    "adgective",
+    "pronoun",
+    "verb",
+    "preposition"
   ]
 }
