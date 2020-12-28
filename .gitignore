@@ -3,7 +3,6 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
 test.py
-data.json
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
