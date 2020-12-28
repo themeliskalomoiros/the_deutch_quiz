@@ -1,17 +1,15 @@
 from words import *
 
-counter = 0
+db = Database()
 
 def read_word():
-    global counter
-    counter += 1
+    counter = db.words_count()
     print(f"Word {counter}:")
     text = input("\tenter text > ")
     translation = input("\tenter translation > ")
     word_class = input("\tenter class > ")
     return Word(text, translation, word_class)
 
-db = Database()
 
 while(True):
     word = read_word()
