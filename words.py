@@ -38,7 +38,8 @@ class Database(object):
             print("Database: ", e)
             raise FileNotFoundError()
         finally:
-            file.close()
+            if file:
+                file.close()
 
     def load_words(self):
         words = []
@@ -58,5 +59,30 @@ class Database(object):
         return Word(text, translation, word_class)
 
     def insert_word(self, word):
-        if not word_exist():
-            pass
+        """ Returns true for a successfull insert, false otherwise."""
+        if self.word_exist(word):
+            return False
+        else:
+            try:
+                file = open(Database.file_name, "w")
+                words = self.raw_json[Database.key_words]
+                words.append(word.to_json())
+
+                self.raw_json = {Database.key_words: words}
+                file.write(json.dumps(self.raw_json))
+
+                return True
+            except Exception as e:
+                print(f"Database: Error in word insertion.\n{e}")
+                return False
+            finally:
+                if file:
+                    file.close()
+
+    def word_exist(self, word):
+        word_data = self.raw_json[Database.key_words]
+        for wd in word_data:
+            if word.text == wd[Database.key_text]:
+                return True
+            else:
+                return False
