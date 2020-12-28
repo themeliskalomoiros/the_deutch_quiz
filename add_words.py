@@ -5,9 +5,10 @@ counter = 0
 def read_word():
     global counter
     counter += 1
-    text = input(f"Word {counter}: enter text ")
-    translation = input(f"Word {counter}: enter translation ")
-    word_class = input(f"Word {counter}: enter class ")
+    print(f"Word {counter}:")
+    text = input("\tenter text > ")
+    translation = input("\tenter translation > ")
+    word_class = input("\tenter class > ")
     return Word(text, translation, word_class)
 
 db = Database()
