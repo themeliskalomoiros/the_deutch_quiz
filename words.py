@@ -19,6 +19,12 @@ class Database(object):
     def __init__(self):
         self.data = self.load_data()
 
+    def words_count(self):
+        if self.data:
+            return len(self.data)
+        else:
+            return 0
+
     def load_data(self):
         try:
             file = open(Database.file_name, "r")
