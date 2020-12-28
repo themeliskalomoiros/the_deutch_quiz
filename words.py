@@ -12,7 +12,7 @@ class Database(object):
     """ Initializes quiz data stored in json format."""
 
     # Json metadata
-    file_name = "data.json"
+    file_name = "words.json"
     key_class = "class"
     key_translation = "translation"
 
