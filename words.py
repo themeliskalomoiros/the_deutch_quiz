@@ -8,8 +8,8 @@ class Word(object):
         self.word_class = word_class
 
 
-class Database(object):
-    """ Initializes quiz data stored in json format."""
+class WordRepository(object):
+    """ Initializes words stored in a json file."""
 
     # Json metadata
     file_name = "words.json"
@@ -17,7 +17,7 @@ class Database(object):
     key_translation = "translation"
 
     def __init__(self):
-        self.data = self.load_data()
+        self.data = self.load_words()
 
     def words_count(self):
         if self.data:
@@ -25,28 +25,24 @@ class Database(object):
         else:
             return 0
 
-    def load_data(self):
+    def load_words(self):
         try:
-            file = open(Database.file_name, "r")
-            file_data = file.read()
-            return json.loads(file_data)
-        except FileNotFoundError as e:
-            print("Database: ", e)
-            raise FileNotFoundError()
-        finally:
-            if file:
-                file.close()
+            with open(WordRepository.file_name, "r") as file:
+                return json.loads(file.read())
+        except IOError:
+            msg = "WordRepository: error in load_words, does the file exists?"
+            raise IOError(msg)
 
     def get_words(self):
         words = []
-        print(type(self.data))
-        for key, value in self.data.items():
-            text = key
-            translation = value[Database.key_translation]
-            word_class = value[Database.key_class]
-            word = Word(text, translation, word_class)
 
-            words.append(word)
+        if self.data:
+            for key, value in self.data.items():
+                text = key
+                translation = value[WordRepository.key_translation]
+                word_class = value[WordRepository.key_class]
+                word = Word(text, translation, word_class)
+                words.append(word)
 
         return words
 
@@ -57,18 +53,18 @@ class Database(object):
         else:
             key = word.text
             self.data[key] = {
-                Database.key_translation: word.translation,
-                Database.key_class: word.word_class
+                WordRepository.key_translation: word.translation,
+                WordRepository.key_class: word.word_class
             }
 
             try:
-                file = open(Database.file_name, "w")
+                file = open(WordRepository.file_name, "w")
                 raw_json = json.dumps(self.data)
                 file.write(raw_json)
 
                 return True
-            except Exception as e:
-                raise Exception(f"Database: {e}")
+            except Exception:
+                print "WordRepository: error in '{0}' insertion.".format(word.text)
             finally:
                 if file:
                     file.close()

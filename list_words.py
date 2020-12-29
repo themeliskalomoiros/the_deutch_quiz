@@ -1,8 +1,8 @@
 import words
 
-db = words.Database()
+repo = words.WordRepository()
 
-words = db.get_words()
+words = repo.get_words()
 
 for w in words:
-    print(w.text, w.translation, w.word_class)
+    print w.text, w.translation, w.word_class
