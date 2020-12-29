@@ -17,11 +17,11 @@ class WordRepository(object):
     key_translation = "translation"
 
     def __init__(self):
-        self.data = self.load_words()
+        self.words = self.load_words()
 
     def words_count(self):
-        if self.data:
-            return len(self.data)
+        if self.words:
+            return len(self.words)
         else:
             return 0
 
@@ -36,8 +36,8 @@ class WordRepository(object):
     def get_words(self):
         words = []
 
-        if self.data:
-            for key, value in self.data.items():
+        if self.words:
+            for key, value in self.words.items():
                 text = key
                 translation = value[WordRepository.key_translation]
                 word_class = value[WordRepository.key_class]
@@ -48,31 +48,29 @@ class WordRepository(object):
 
     def insert_word(self, word):
         """ Returns true for a successfull insert, false otherwise."""
-        if self.word_exist(word):
-            return False
-        else:
-            key = word.text
-            self.data[key] = {
-                WordRepository.key_translation: word.translation,
-                WordRepository.key_class: word.word_class
-            }
+        if self.words:
+            if self.word_exist(word):
+                return False
+            else:
+                key = word.text
+                self.words[key] = {
+                    WordRepository.key_translation: word.translation,
+                    WordRepository.key_class: word.word_class
+                }
 
-            try:
-                file = open(WordRepository.file_name, "w")
-                raw_json = json.dumps(self.data)
-                file.write(raw_json)
-
-                return True
-            except Exception:
-                print "WordRepository: error in '{0}' insertion.".format(word.text)
-            finally:
-                if file:
-                    file.close()
+                try:
+                    with open(WordRepository.file_name, "w") as file:
+                        raw_json = json.dumps(self.words, ensure_ascii=False)
+                        file.write(raw_json)
+                        return True
+                except IOError:
+                    msg = "WordRepository: error in '{0}'s insertion.".format(word.text)
+                    raise IOError(msg)
 
     def word_exist(self, word):
         key = word.text
 
-        if key in self.data:
+        if key in self.words:
             return True
         else:
             return False
