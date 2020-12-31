@@ -12,7 +12,7 @@ class Word(object):
 
 
 class WordRepository(object):
-    """ Initializes words stored in a json file."""
+    """Initializes words stored in a json file."""
 
     # Json metadata
     file_name = "words.json"
@@ -22,12 +22,6 @@ class WordRepository(object):
     def __init__(self):
         self.words = self.load_words()
 
-    def words_count(self):
-        if self.words:
-            return len(self.words)
-        else:
-            return 0
-
     def load_words(self):
         try:
             with open(WordRepository.file_name, "r") as file:
@@ -35,6 +29,13 @@ class WordRepository(object):
         except IOError:
             msg = "WordRepository: error in load_words, does the file exists?"
             raise IOError(msg)
+
+    def words_count(self):
+        if self.words:
+            return len(self.words)
+        else:
+            return 0
+
 
     def get_words(self):
         words = []
@@ -44,8 +45,7 @@ class WordRepository(object):
                 text = key
                 translation = value[WordRepository.key_translation]
                 word_class = value[WordRepository.key_class]
-                word = Word(text, translation, word_class)
-                words.append(word)
+                words.append(Word(text, translation, word_class))
 
         return words
 
