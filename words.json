@@ -1,1 +1,377 @@
-{"Vater": {"class": "noun", "translation": "father"}, "Norden": {"class": "noun", "translation": "the north"}, "Ehemann": {"class": "noun", "translation": "husband"}, "Mama": {"class": "noun", "translation": "mother"}, "brauchen": {"class": "verb", "translation": "need"}, "Tante": {"class": "noun", "translation": "aunt"}, "falsch": {"class": "adjective", "translation": "not correct"}, "raten": {"class": "verb", "translation": "guess"}, "Osten": {"class": "noun", "translation": "the east"}, "l�gen": {"class": "verb", "translation": "lying"}, "suchen": {"class": "noun", "translation": "search"}, "sprechen": {"class": "verb", "translation": "speak"}, "wer": {"class": "pronoun", "translation": "who"}, "geben": {"class": "verb", "translation": "to give"}, "ledig": {"class": "adjective", "translation": "single"}, "zusammen": {"class": "adverb", "translation": "together"}, "S�den": {"class": "noun", "translation": "the south"}, "Neffe": {"class": "noun", "translation": "nephew"}, "Entschuldigung": {"class": "noun", "translation": "sorry"}, "notieren": {"class": "verb", "translation": "note"}, "ankreuzen": {"class": "verb", "translation": "mark with a cross"}, "zeichnen": {"class": "verb", "translation": "draw"}, "wie": {"class": "adverb", "translation": "how"}, "Bild": {"class": "noun", "translation": "the picture"}, "Oma": {"class": "noun", "translation": "GrandMother"}, "machen": {"class": "verb", "translation": "do"}, "sollen": {"class": "auxiliary verb", "translation": "should"}, "Verbinden": {"class": "verb", "translation": "connect"}, "Zahl": {"class": "noun", "translation": "the number"}, "Mann": {"translation": "man", "class": "noun"}, "Lampe": {"class": "noun", "translation": "lamp"}, "Frage": {"class": "noun", "translation": "the question"}, "Neffin": {"class": "noun", "translation": "nephew"}, "spielen": {"class": "noun", "translation": "play"}, "vergleichen": {"class": "verb", "translation": "compare"}, "Eltern": {"class": "noun", "translation": "parents"}, "Fremd": {"class": "adjective", "translation": "foreign"}, "Leben": {"class": "noun", "translation": "life"}, "Hallo": {"class": "noun", "translation": "hello"}, "Zeichen": {"class": "noun", "translation": "character, sign"}, "Formular": {"class": "noun", "translation": "form"}, "Westen": {"class": "noun", "translation": "the west"}, "da": {"class": "conjunction", "translation": "there"}, "fragen": {"class": "verb", "translation": "ask"}, "Tochter": {"class": "noun", "translation": "daughter"}, "Gespräch": {"class": "noun", "translation": "the conversation"}, "alt": {"class": "adjective", "translation": "old"}, "woher": {"class": "adverb", "translation": "from where"}, "Postleitzahl": {"class": "noun", "translation": "postal code"}, "schreiben": {"class": "verb", "translation": "write"}, "noch": {"class": "adverb", "translation": "still"}, "Enkelin": {"class": "noun", "translation": "granddaughter"}, "Schwester": {"class": "noun", "translation": "sister"}, "Enkel": {"class": "noun", "translation": "grandson"}, "typisch": {"class": "adjective", "translation": "typical"}, "hören": {"class": "verb", "translation": "hear"}, "Meinung": {"class": "noun", "translation": "the opinion, the view, the mind"}, "Land": {"class": "noun", "translation": "country"}, "Opa": {"class": "noun", "translation": "grandfather"}, "Kurs": {"class": "noun", "translation": "the course"}, "Stadt": {"class": "noun", "translation": "city"}, "erzählen": {"class": "verb", "translation": "tell"}, "antworten": {"class": "noun", "translation": "to answer"}, "Gro�vater": {"class": "noun", "translation": "grandfather"}, "jung": {"class": "adjective", "translation": "young"}, "Saga": {"class": "noun", "translation": "the saga, the story"}, "ergänzen": {"class": "verb", "translation": "complete"}, "warum": {"class": "adverb", "translation": "why"}, "Binding": {"class": "noun", "translation": "the bond"}, "meinen": {"class": "verb", "translation": "think, believe, mean"}, "Alter": {"class": "noun", "translation": "age"}, "Bruder": {"class": "noun", "translation": "brother"}, "welche": {"class": "pronoun", "translation": "which"}, "wohnen": {"class": "verb", "translation": "live"}, "einmal": {"class": "adverb", "translation": "once"}, "Dame": {"class": "noun", "translation": "lady"}, "wann": {"class": "adverb", "translation": "when"}, "Lektion": {"class": "noun", "translation": "the lesson"}, "markieren": {"class": "verb", "translation": "mark"}, "Gro�mutter": {"class": "noun", "translation": "grandmother"}, "Kind": {"class": "noun", "translation": "child"}, "Ehefrau": {"class": "noun", "translation": "wife"}, "richtig": {"class": "adverb", "translation": "correct"}, "langsam": {"class": "adverb", "translation": "slowly"}, "Cousine": {"class": "noun", "translation": "cousin"}, "Nummer": {"class": "noun", "translation": "the number"}, "Mutter": {"class": "noun", "translation": "mother"}, "Kreuz": {"class": "noun", "translation": "the cross"}, "sagen": {"class": "verb", "translation": "say, tell, speak"}, "Antwort": {"class": "noun", "translation": "the answer"}, "Telefone": {"class": "noun", "translation": "telephone"}, "Nichte": {"class": "noun", "translation": "niece"}, "arbeiten": {"class": "verb", "translation": "work"}, "Gro�eltern": {"class": "noun", "translation": "grandparents"}, "variieren": {"class": "verb", "translation": "vary"}, "weil": {"class": "conjunction", "translation": "because"}, "wollen": {"class": "verb", "translation": "to want"}, "zeigen": {"class": "verb", "translation": "demonstrate, show"}, "Herr": {"class": "noun", "translation": "Mr"}, "ordnen": {"class": "verb", "translation": "organize"}, "aber": {"class": "conjunction", "translation": "but"}, "gleich": {"class": "adverb", "translation": "equal"}, "verheiratet": {"class": "adjective", "translation": "married"}, "Anmeldung": {"class": "noun", "translation": "registration"}, "nehmen": {"class": "verb", "translation": "take"}, "Onkel": {"class": "noun", "translation": "uncle"}, "leben": {"class": "verb", "translation": "live"}, "Auto": {"class": "noun", "translation": "car"}, "geboren": {"class": "verb", "translation": "born"}, "Wahrheit": {"class": "noun", "translation": "the truth"}, "Fragezeichen": {"class": "noun", "translation": "the question mark - '?'"}, "Suche": {"class": "noun", "translation": "the search"}, "wahr": {"class": "adjective", "translation": "true"}, "lesen": {"class": "verb", "translation": "read"}, "Sohn": {"class": "noun", "translation": "son"}, "Arbeit": {"class": "noun", "translation": "the job"}, "Sprache": {"class": "noun", "translation": "the language"}, "Markierung": {"class": "noun", "translation": "the marking"}, "Fremdsprache": {"class": "noun", "translation": "foreign language"}, "Wort": {"class": "noun", "translation": "the word"}, "Spiel": {"class": "noun", "translation": "the game"}, "wieso": {"class": "adverb", "translation": "how so"}, "testen": {"class": "verb", "translation": "testing"}, "Meind": {"class": "noun", "translation": "the mind"}, "schnell": {"class": "adverb", "translation": "quickly"}}
+{
+   "Vater":{
+      "class":"noun", "translation":"father"
+   },
+   "Norden":{
+      "class":"noun", "translation":"the north"
+   },
+   "Ehemann":{
+      "class":"noun", "translation":"husband"
+   },
+   "Mama":{
+      "class":"noun", "translation":"mother"
+   },
+   "brauchen":{
+      "class":"verb", "translation":"need"
+   },
+   "Tante":{
+      "class":"noun", "translation":"aunt"
+   },
+   "falsch":{
+      "class":"adjective", "translation":"not correct"
+   },
+   "raten":{
+      "class":"verb", "translation":"guess"
+   },
+   "Osten":{
+      "class":"noun", "translation":"the east"
+   },
+   "lügen":{
+      "class":"verb", "translation":"lying"
+   },
+   "suchen":{
+      "class":"noun", "translation":"search"
+   },
+   "sprechen":{
+      "class":"verb", "translation":"speak"
+   },
+   "wer":{
+      "class":"pronoun", "translation":"who"
+   },
+   "geben":{
+      "class":"verb", "translation":"to give"
+   },
+   "ledig":{
+      "class":"adjective", "translation":"single"
+   },
+   "zusammen":{
+      "class":"adverb", "translation":"together"
+   },
+   "Süden":{
+      "class":"noun", "translation":"the south"
+   },
+   "Neffe":{
+      "class":"noun", "translation":"nephew"
+   },
+   "Entschuldigung":{
+      "class":"noun", "translation":"sorry"
+   },
+   "notieren":{
+      "class":"verb", "translation":"note"
+   },
+   "ankreuzen":{
+      "class":"verb", "translation":"mark with a cross"
+   },
+   "zeichnen":{
+      "class":"verb", "translation":"draw"
+   },
+   "wie":{
+      "class":"adverb", "translation":"how"
+   },
+   "Bild":{
+      "class":"noun", "translation":"the picture"
+   },
+   "Oma":{
+      "class":"noun", "translation":"GrandMother"
+   },
+   "machen":{
+      "class":"verb", "translation":"do"
+   },
+   "sollen":{
+      "class":"auxiliary verb", "translation":"should"
+   },
+   "Verbinden":{
+      "class":"verb", "translation":"connect"
+   },
+   "Zahl":{
+      "class":"noun", "translation":"the number"
+   },
+   "Mann":{
+      "translation":"man", "class":"noun"
+   },
+   "Lampe":{
+      "class":"noun", "translation":"lamp"
+   },
+   "Frage":{
+      "class":"noun", "translation":"the question"
+   },
+   "Neffin":{
+      "class":"noun", "translation":"nephew"
+   },
+   "spielen":{
+      "class":"noun", "translation":"play"
+   },
+   "vergleichen":{
+      "class":"verb", "translation":"compare"
+   },
+   "Eltern":{
+      "class":"noun", "translation":"parents"
+   },
+   "Fremd":{
+      "class":"adjective", "translation":"foreign"
+   },
+   "Leben":{
+      "class":"noun", "translation":"life"
+   },
+   "Hallo":{
+      "class":"noun", "translation":"hello"
+   },
+   "Zeichen":{
+      "class":"noun", "translation":"character, sign"
+   },
+   "Formular":{
+      "class":"noun", "translation":"form"
+   },
+   "Westen":{
+      "class":"noun", "translation":"the west"
+   },
+   "da":{
+      "class":"conjunction", "translation":"there"
+   },
+   "fragen":{
+      "class":"verb", "translation":"ask"
+   },
+   "Tochter":{
+      "class":"noun", "translation":"daughter"
+   },
+   "Gespräch":{
+      "class":"noun", "translation":"the conversation"
+   },
+   "alt":{
+      "class":"adjective", "translation":"old"
+   },
+   "woher":{
+      "class":"adverb", "translation":"from where"
+   },
+   "Postleitzahl":{
+      "class":"noun", "translation":"postal code"
+   },
+   "schreiben":{
+      "class":"verb", "translation":"write"
+   },
+   "noch":{
+      "class":"adverb", "translation":"still"
+   },
+   "Enkelin":{
+      "class":"noun", "translation":"granddaughter"
+   },
+   "Schwester":{
+      "class":"noun", "translation":"sister"
+   },
+   "Enkel":{
+      "class":"noun", "translation":"grandson"
+   },
+   "typisch":{
+      "class":"adjective", "translation":"typical"
+   },
+   "hören":{
+      "class":"verb", "translation":"hear"
+   },
+   "Meinung":{
+      "class":"noun", "translation":"the opinion, the view, the mind"
+   },
+   "Land":{
+      "class":"noun", "translation":"country"
+   },
+   "Opa":{
+      "class":"noun", "translation":"grandfather"
+   },
+   "Kurs":{
+      "class":"noun", "translation":"the course"
+   },
+   "Stadt":{
+      "class":"noun", "translation":"city"
+   },
+   "erzählen":{
+      "class":"verb", "translation":"tell"
+   },
+   "antworten":{
+      "class":"noun", "translation":"to answer"
+   },
+   "Großvater":{
+      "class":"noun", "translation":"grandfather"
+   },
+   "jung":{
+      "class":"adjective", "translation":"young"
+   },
+   "Saga":{
+      "class":"noun", "translation":"the saga, the story"
+   },
+   "ergänzen":{
+      "class":"verb", "translation":"complete"
+   },
+   "warum":{
+      "class":"adverb", "translation":"why"
+   },
+   "Binding":{
+      "class":"noun", "translation":"the bond"
+   },
+   "meinen":{
+      "class":"verb", "translation":"think, believe, mean"
+   },
+   "Alter":{
+      "class":"noun", "translation":"age"
+   },
+   "Bruder":{
+      "class":"noun", "translation":"brother"
+   },
+   "welche":{
+      "class":"pronoun", "translation":"which"
+   },
+   "wohnen":{
+      "class":"verb", "translation":"live"
+   },
+   "einmal":{
+      "class":"adverb", "translation":"once"
+   },
+   "Dame":{
+      "class":"noun", "translation":"lady"
+   },
+   "wann":{
+      "class":"adverb", "translation":"when"
+   },
+   "Lektion":{
+      "class":"noun", "translation":"the lesson"
+   },
+   "markieren":{
+      "class":"verb", "translation":"mark"
+   },
+   "Großmutter":{
+      "class":"noun", "translation":"grandmother"
+   },
+   "Kind":{
+      "class":"noun", "translation":"child"
+   },
+   "Ehefrau":{
+      "class":"noun", "translation":"wife"
+   },
+   "richtig":{
+      "class":"adverb", "translation":"correct"
+   },
+   "langsam":{
+      "class":"adverb", "translation":"slowly"
+   },
+   "Cousine":{
+      "class":"noun", "translation":"cousin"
+   },
+   "Nummer":{
+      "class":"noun", "translation":"the number"
+   },
+   "Mutter":{
+      "class":"noun", "translation":"mother"
+   },
+   "Kreuz":{
+      "class":"noun", "translation":"the cross"
+   },
+   "sagen":{
+      "class":"verb", "translation":"say, tell, speak"
+   },
+   "Antwort":{
+      "class":"noun", "translation":"the answer"
+   },
+   "Telefone":{
+      "class":"noun", "translation":"telephone"
+   },
+   "Nichte":{
+      "class":"noun", "translation":"niece"
+   },
+   "arbeiten":{
+      "class":"verb", "translation":"work"
+   },
+   "Großeltern":{
+      "class":"noun", "translation":"grandparents"
+   },
+   "variieren":{
+      "class":"verb", "translation":"vary"
+   },
+   "weil":{
+      "class":"conjunction", "translation":"because"
+   },
+   "wollen":{
+      "class":"verb", "translation":"to want"
+   },
+   "zeigen":{
+      "class":"verb", "translation":"demonstrate, show"
+   },
+   "Herr":{
+      "class":"noun", "translation":"Mr"
+   },
+   "ordnen":{
+      "class":"verb", "translation":"organize"
+   },
+   "aber":{
+      "class":"conjunction", "translation":"but"
+   },
+   "gleich":{
+      "class":"adverb", "translation":"equal"
+   },
+   "verheiratet":{
+      "class":"adjective", "translation":"married"
+   },
+   "Anmeldung":{
+      "class":"noun", "translation":"registration"
+   },
+   "nehmen":{
+      "class":"verb", "translation":"take"
+   },
+   "Onkel":{
+      "class":"noun", "translation":"uncle"
+   },
+   "leben":{
+      "class":"verb", "translation":"live"
+   },
+   "Auto":{
+      "class":"noun", "translation":"car"
+   },
+   "geboren":{
+      "class":"verb", "translation":"born"
+   },
+   "Wahrheit":{
+      "class":"noun", "translation":"the truth"
+   },
+   "Fragezeichen":{
+      "class":"noun", "translation":"the question mark - '?'"
+   },
+   "Suche":{
+      "class":"noun", "translation":"the search"
+   },
+   "wahr":{
+      "class":"adjective", "translation":"true"
+   },
+   "lesen":{
+      "class":"verb", "translation":"read"
+   },
+   "Sohn":{
+      "class":"noun", "translation":"son"
+   },
+   "Arbeit":{
+      "class":"noun", "translation":"the job"
+   },
+   "Sprache":{
+      "class":"noun", "translation":"the language"
+   },
+   "Markierung":{
+      "class":"noun", "translation":"the marking"
+   },
+   "Fremdsprache":{
+      "class":"noun", "translation":"foreign language"
+   },
+   "Wort":{
+      "class":"noun", "translation":"the word"
+   },
+   "Spiel":{
+      "class":"noun", "translation":"the game"
+   },
+   "wieso":{
+      "class":"adverb", "translation":"how so"
+   },
+   "testen":{
+      "class":"verb", "translation":"testing"
+   },
+   "Meind":{
+      "class":"noun", "translation":"the mind"
+   },
+   "schnell":{
+      "class":"adverb", "translation":"quickly"
+   }
+}
