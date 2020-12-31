@@ -5,9 +5,9 @@ from words import *
 repo = WordRepository()
 
 def read_word():
-    text = raw_input("\tenter text> ")
-    translation = raw_input("\tenter translation> ")
-    word_class = raw_input("\tenter class> ")
+    text = raw_input("\tenter text> ").encode("utf-8")
+    translation = raw_input("\tenter translation> ").encode("utf-8")
+    word_class = raw_input("\tenter class> ").encode("utf-8")
     
     return Word(text, translation, word_class)
 

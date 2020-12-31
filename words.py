@@ -63,7 +63,7 @@ class WordRepository(object):
 
                 try:
                     with open(WordRepository.file_name, "w") as file:
-                        raw_json = json.dumps(self.words, ensure_ascii=False)
+                        raw_json = json.dumps(self.words)
                         file.write(raw_json)
                         return True
                 except IOError:
