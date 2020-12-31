@@ -3,6 +3,7 @@
 
 import json
 
+
 class Word(object):
 
     def __init__(self, text = "", translation = "", word_class = ""):
@@ -36,7 +37,6 @@ class WordRepository(object):
         else:
             return 0
 
-
     def get_words(self):
         words = []
 
@@ -50,12 +50,13 @@ class WordRepository(object):
         return words
 
     def insert_word(self, word):
-        """ Returns true for a successfull insert, false otherwise."""
+        """Returns true for a successfull insert, false otherwise."""
         if self.words:
-            if self.word_exist(word):
+            key = word.text
+            
+            if key in self.words:
                 return False
             else:
-                key = word.text
                 self.words[key] = {
                     WordRepository.key_translation: word.translation,
                     WordRepository.key_class: word.word_class
@@ -69,11 +70,3 @@ class WordRepository(object):
                 except IOError:
                     msg = "WordRepository: error in '{0}'s insertion.".format(word.text)
                     raise IOError(msg)
-
-    def word_exist(self, word):
-        key = word.text
-
-        if key in self.words:
-            return True
-        else:
-            return False
