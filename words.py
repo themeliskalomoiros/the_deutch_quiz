@@ -24,12 +24,13 @@ class WordRepository(object):
 
     def load_words(self):
         try:
-            with open(WordRepository.file_name, "r") as file:
-                return json.loads(file.read())
+            with open(WordRepository.file_name, 'r') as file:
+                return json.loads(unicode(file.read(), 'utf-8'))
         except IOError:
-            msg = "WordRepository: error in load_words, does the file exists?"
-            raise IOError(msg)
-
+            with open(WordRepository.file_name, 'w') as file:
+                file.write('{ }')
+                return {}
+            
     def words_count(self):
         if self.words:
             return len(self.words)
@@ -48,24 +49,24 @@ class WordRepository(object):
 
         return words
 
+    def word_exists(self, word_text):
+        if word_text in self.words:
+            return True
+        else:
+            return False
+    
     def insert_word(self, word):
-        """Returns true for a successfull insert, false otherwise."""
-        if self.words:
-            key = word.text
-            
-            if key in self.words:
-                return False
-            else:
-                self.words[key] = {
-                    WordRepository.key_translation: word.translation,
-                    WordRepository.key_class: word.word_class
-                }
+        key = word.text
+        if not key in self.words:
+            self.words[key] = {
+                WordRepository.key_translation: word.translation,
+                WordRepository.key_class: word.word_class
+            }
 
-                try:
-                    with open(WordRepository.file_name, "w") as file:
-                        raw_json = json.dumps(self.words)
-                        file.write(raw_json)
-                        return True
-                except IOError:
-                    msg = "WordRepository: error in '{0}'s insertion.".format(word.text)
-                    raise IOError(msg)
+            try:
+                with open(WordRepository.file_name, "w") as file:
+                    raw_json = json.dumps(self.words)
+                    file.write(raw_json)
+            except IOError:
+                msg = "WordRepository: error in '{0}'s insertion.".format(word.text)
+                raise IOError(msg)

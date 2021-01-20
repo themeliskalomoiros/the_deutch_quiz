@@ -2,32 +2,28 @@
 
 from words import *
 
-repo = WordRepository()
-
-def read_word():
-    text = raw_input("\tenter text> ").encode("utf-8")
-    translation = raw_input("\tenter translation> ").encode("utf-8")
-    word_class = raw_input("\tenter class> ").encode("utf-8")
-    
-    return Word(text, translation, word_class)
 
 def add_words():
+    repo = WordRepository()
+
     while True:
-        print "Word {0}:".format(repo.words_count())
-    
-        word = read_word()
-        word_inserted = repo.insert_word(word)
+        print "\nWord", repo.words_count()
+        text = unicode(raw_input('\tenter text> ').strip(), 'utf-8')
 
-        if word_inserted:
-            print "Word {0} inserted successfully!".format(word.text)
+        if text:
+            if repo.word_exists(text):
+                print '\n', text, 'exists.'
+                continue
+            else:
+                translation = unicode(raw_input('\tenter translation> ').strip(), 'utf-8')
+                word_class = unicode(raw_input('\tenter class> ').strip(), 'utf-8')
+                word = Word(text, translation, word_class)
+
+                repo.insert_word(word)
+                print '\n', word.text, 'inserted.'
         else:
-            print "Word {0} already exists.".format(word.text)
-
-        add_another_word = raw_input("Add another word (y/n)?> ")
-        if add_another_word.lower() != 'y':
-            print("\nGoodbye!")
-            break
-
+            print '\nGoodbye!'
+            return
 
 if __name__ == '__main__':
     add_words()
