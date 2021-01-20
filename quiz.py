@@ -3,7 +3,9 @@
 from random import shuffle
 from words import WordRepository
 
-print "Welcome to 'The Deutsch Quiz'"
+print "\n*********************************"
+print "* Welcome to 'The Deutsch Quiz' *"
+print "*********************************"
 
 words = WordRepository().get_words()
 shuffle(words)
@@ -35,5 +37,7 @@ for i in range(0, 6):
     else:
         print "\n\tWrong :(. The correct answer '{0}'".format(translation)
 
-print "You've answered", correct_answers, "out of 6 questions."
-print "You've got", class_bonus, "class bonus points."
+print "\n\nResults:"
+print "\tYou've answered", correct_answers, "out of 6 questions."
+print "\tYou've got", class_bonus, "class bonus points."
+print "Total score is ", correct_answers + class_bonus
