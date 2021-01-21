@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from words import *
 
 repo = WordRepository()
