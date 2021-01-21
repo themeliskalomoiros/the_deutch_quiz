@@ -10,8 +10,9 @@ while True:
     reply = unicode(raw_input('\nWord to update:> '), 'utf8')
 
     if reply:
-        if repo.word_exists(reply):
-            original_word = repo.get_word(reply)
+        original_word = repo.get_word(reply)
+        
+        if original_word:
             prompt_msg = '\nFound \'{0}\' ({1}, {2}).\n'.format(reply.encode('utf8'), original_word.translation.encode('utf8'), original_word.word_class.encode('utf8'))
             print prompt_msg
 

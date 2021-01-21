@@ -53,14 +53,6 @@ class WordRepository(object):
 
         return words
 
-    def word_exists(self, word_text):
-        # TODO: maybe it's better to accept a word object than the text.
-        # TODO: maybe it's better to return the word instead of True or False
-        if word_text in self.words:
-            return True
-        else:
-            return False
-
     def get_word(self, word_text):
         if word_text in self.words:
             word_dict = self.words[word_text]
@@ -68,7 +60,6 @@ class WordRepository(object):
             word_class = word_dict[WordRepository.key_class]
 
             return Word(word_text, translation, word_class)
-
 
     def insert_word(self, word):
         key = word.text

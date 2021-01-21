@@ -11,7 +11,7 @@ def add_words():
         text = unicode(raw_input('\tenter text> ').strip(), 'utf8')
 
         if text:
-            if repo.word_exists(text):
+            if repo.get_word(text):
                 print '\n', text.encode('utf8'), 'exists.'
                 continue
             else:
@@ -23,7 +23,7 @@ def add_words():
                 print '\n', word.text.encode('utf8'), 'inserted.'
         else:
             print '\nGoodbye!'
-            return
+            break
 
 if __name__ == '__main__':
     add_words()
