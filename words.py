@@ -58,19 +58,30 @@ class WordRepository(object):
             return True
         else:
             return False
-    
+
     def insert_word(self, word):
         key = word.text
+
         if not key in self.words:
             self.words[key] = {
                 WordRepository.key_translation: word.translation,
                 WordRepository.key_class: word.word_class
             }
 
-            try:
-                with open(WordRepository.file_name, "w") as file:
-                    raw_json = json.dumps(self.words, ensure_ascii = False)
-                    file.write(raw_json.encode('utf8'))
-            except IOError:
-                msg = "WordRepository: error in '{0}'s insertion.".format(word.text.encode('utf8'))
-                raise IOError(msg)
+            self.save_words_to_file()
+
+    def delete_word(self, word_text):
+        if word_text in self.words:
+            del self.words[word_text]
+            self.save_words_to_file()
+            return True
+        else:
+            return False
+
+    def save_words_to_file(self):
+        try:
+            with open(WordRepository.file_name, 'w') as file:
+                raw_json = json.dumps(self.words, ensure_ascii = False)
+                file.write(raw_json.encode('utf8'))
+        except IOError:
+            raise IOError('WordRepository: error while saving words to file')
