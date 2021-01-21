@@ -20,7 +20,7 @@ for i in range(0, 6):
     translation = words[i].translation
     w_class = words[i].word_class
     
-    reply = raw_input("\tWhat does the word '{0}' means?$ ".format(text))
+    reply = raw_input("\tWhat does the word '{0}' means?$ ".format(text.encode('utf8')))
 
     if reply.lower().strip() == translation:
         print "\tThat's right!"
@@ -35,7 +35,7 @@ for i in range(0, 6):
             print "\tYou've missed that, it's", w_class
         
     else:
-        print "\n\tWrong :(. The correct answer '{0}'".format(translation)
+        print "\n\tWrong :(. The correct answer is '{0}'".format(translation)
 
 print "\n\nResults:"
 print "\tYou've answered", correct_answers, "out of 6 questions."

@@ -8,19 +8,19 @@ def add_words():
 
     while True:
         print "\nWord", repo.words_count()
-        text = unicode(raw_input('\tenter text> '), 'utf-8').strip()
+        text = unicode(raw_input('\tenter text> ').strip(), 'utf8')
 
         if text:
             if repo.word_exists(text):
-                print '\n', text, 'exists.'
+                print '\n', text.encode('utf8'), 'exists.'
                 continue
             else:
-                translation = unicode(raw_input('\tenter translation> '), 'utf-8').strip()
-                word_class = unicode(raw_input('\tenter class> '), 'utf-8').strip()
+                translation = unicode(raw_input('\tenter translation> ').strip(), 'utf8')
+                word_class = unicode(raw_input('\tenter class> ').strip(), 'utf8')
                 word = Word(text, translation, word_class)
 
                 repo.insert_word(word)
-                print '\n', word.text, 'inserted.'
+                print '\n', word.text.encode('utf8'), 'inserted.'
         else:
             print '\nGoodbye!'
             return

@@ -6,6 +6,7 @@ import json
 class Word(object):
 
     def __init__(self, text = "", translation = "", word_class = ""):
+        #Since its a german word its properties will be unicode strings (not byte strings).
         self.text = text
         self.translation = translation
         self.word_class = word_class
@@ -14,7 +15,7 @@ class Word(object):
 class WordRepository(object):
     """Initializes words stored in a json file."""
 
-    # Json metadata
+    # Json file metadata.
     file_name = "words.json"
     key_class = "class"
     key_translation = "translation"
@@ -25,8 +26,10 @@ class WordRepository(object):
     def load_words(self):
         try:
             with open(WordRepository.file_name, 'r') as file:
-                return json.loads(unicode(file.read(), 'utf-8'))
+                raw_json = unicode(file.read(), 'utf8')
+                return json.loads(raw_json)
         except IOError:
+            # File does not exist, so we create it.
             with open(WordRepository.file_name, 'w') as file:
                 file.write('{ }')
                 return {}
@@ -50,6 +53,7 @@ class WordRepository(object):
         return words
 
     def word_exists(self, word_text):
+        # TODO: maybe it's better to accept a word object than the text.
         if word_text in self.words:
             return True
         else:
@@ -65,8 +69,8 @@ class WordRepository(object):
 
             try:
                 with open(WordRepository.file_name, "w") as file:
-                    raw_json = json.dumps(self.words)
-                    file.write(raw_json)
+                    raw_json = json.dumps(self.words, ensure_ascii = False)
+                    file.write(raw_json.encode('utf8'))
             except IOError:
-                msg = "WordRepository: error in '{0}'s insertion.".format(word.text)
+                msg = "WordRepository: error in '{0}'s insertion.".format(word.text.encode('utf8'))
                 raise IOError(msg)

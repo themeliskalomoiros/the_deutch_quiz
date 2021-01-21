@@ -1,0 +1,6 @@
+To overcome the frustration of python text encoding (https://pythonhosted.org/kitchen/unicode-frustrations.html)
+I am implementing the follwing strategy:
+
+    The properties of a word are of type 'unicode'. Whenever an operation involves IO ,including printing to the stdout,
+    then the word's properties are first encoded and then the information is passed as bytes. In reverse, we retrieve the
+    bytes and construct a 'Word' type with its properties decoded from bytes to unicode.
