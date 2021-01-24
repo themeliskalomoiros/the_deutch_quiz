@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import time
 import json
 from random import shuffle
 from words import WordRepository
@@ -7,38 +8,53 @@ from words import WordRepository
 
 class QuizRepository(object):
 
+    file_name = 'quiz.json'
+
     def __init__(self):
         all_words = WordRepository().get_words()
-        self.word_frequencies = self.get_sorted_frequencies(all_words)
+        self.timestamps = self.load_timestamps()
+        self.synchronize_timestamps(all_words)
+        self.sorted_timestamps = self.get_sorted_timestamps()
         self.words = self.init_words(all_words)
 
-    def get_sorted_frequencies(self, all_words):
-        frequencies = self.load_frequencies('quiz.json')
-        self.synchronize_frequencies(all_words, frequencies)
-        return sorted(frequencies.items(), key = lambda s:s[1], reverse = True)
-
-    def load_frequencies(self, file_name):
-        with open(file_name, 'r') as file:
+    def load_timestamps(self):
+        with open(QuizRepository.file_name, 'r') as file:
             raw_json = file.read().decode('utf8')
             return json.loads(raw_json)
 
-    def synchronize_frequencies(self, words, stats):
-        """Add zero frequencies for new words."""
-        if len(words) > len(stats):
+    def synchronize_timestamps(self, words):
+        """Add timestamps for new words."""
+        new_words = len(words) > len(self.timestamps)
+        if new_words:
             for w in words:
-                if not w.text in stats:
-                    stats[w.text] = 0
+                new_word = not w.text in self.timestamps
+                if new_word:
+                    self.timestamps[w.text] = 0
+
+    def get_sorted_timestamps(self):
+        return sorted(
+            self.timestamps.items(),
+            key = lambda ts : ts[1])
 
     def init_words(self, all_words):
         words = []
         for i in range(0, 6):
-            f = self.word_frequencies[i]
+            ts = self.sorted_timestamps[i]
             for w in all_words:
-                if w.text == f[0]:
+                if w.text == ts[0]:
                     words.append(w)
                     break
         return words
 
+
+    def update_word(self, word):
+        self.timestamps[word.text] = time.time()
+
+    def save_changes_to_disk(self):
+        """Saves all the changes into the disk"""
+        with open(QuizRepository.file_name, 'w') as file:
+            raw_json = json.dumps(self.timestamps, ensure_ascii = False)
+            file.write(raw_json.encode('utf8'))
 
 class Quiz(object):
 
@@ -56,14 +72,14 @@ class Quiz(object):
         correct_answers = 0
         class_bonus = 0
 
-        print "Debug: words length is", len(self.words)
-
         for i in range(0, 6):
             print "\n\nQuestion ", i + 1, "\n"
 
             text = self.words[i].text
             translation = self.words[i].translation
             w_class = self.words[i].word_class
+
+            self.repo.update_word(self.words[i])
 
             reply = raw_input("\tWhat does the word '{0}' means?$ ".format(text.encode('utf8')))
 
@@ -81,6 +97,8 @@ class Quiz(object):
 
             else:
                 print "\n\tWrong :(. The correct answer is '{0}'".format(translation)
+
+        self.repo.save_changes_to_disk()
 
         print "\n\nResults:"
         print "\tYou've answered", correct_answers, "out of 6 questions."
