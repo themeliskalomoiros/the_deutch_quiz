@@ -11,7 +11,8 @@ class QuizRepository(object):
     file_name = 'quiz.json'
 
     def __init__(self):
-        all_words = WordRepository().get_words()
+        self.word_repo = WordRepository()
+        all_words = self.word_repo.get_words()
         self.timestamps = self.load_timestamps()
         self.synchronize_timestamps(all_words)
         self.sorted_timestamps = self.get_sorted_timestamps()
@@ -38,15 +39,23 @@ class QuizRepository(object):
 
     def init_words(self, all_words):
         words = []
-        for i in range(0, 6):
-            ts = self.sorted_timestamps[i]
-            for w in all_words:
-                if w.text == ts[0]:
-                    words.append(w)
-                    break
+        # First add the new played words of the last time.
+        key1 = self.sorted_timestamps[len(self.sorted_timestamps) - 1][0]
+        key2 = self.sorted_timestamps[len(self.sorted_timestamps) - 2][0]
+        key3 = self.sorted_timestamps[len(self.sorted_timestamps) - 3][0]
+        words.append(self.word_repo.get_word(key1))
+        words.append(self.word_repo.get_word(key2))
+        words.append(self.word_repo.get_word(key3))
+
+        # then add the new ones for the current quiz.
+        key1 = self.sorted_timestamps[0][0]
+        key2 = self.sorted_timestamps[1][0]
+        key3 = self.sorted_timestamps[2][0]
+        words.append(self.word_repo.get_word(key1))
+        words.append(self.word_repo.get_word(key2))
+        words.append(self.word_repo.get_word(key3))
+
         return words
-
-
     def update_word(self, word):
         self.timestamps[word.text] = time.time()
 
@@ -66,8 +75,6 @@ class Quiz(object):
         print "\n*********************************"
         print "* Welcome to 'The Deutsch Quiz' *"
         print "*********************************"
-
-        shuffle(self.words)
 
         correct_answers = 0
         class_bonus = 0
