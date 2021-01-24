@@ -56,7 +56,7 @@ class QuizRepository(object):
         words.append(self.word_repo.get_word(key3))
 
         return words
-    def update_word(self, word):
+    def update_timestamp(self, word):
         self.timestamps[word.text] = time.time()
 
     def save_changes_to_disk(self):
@@ -86,14 +86,13 @@ class Quiz(object):
             translation = self.words[i].translation
             w_class = self.words[i].word_class
 
-            self.repo.update_word(self.words[i])
-
             reply = raw_input("\tWhat does the word '{0}' means?$ ".format(text.encode('utf8')))
 
             if reply.lower().strip() == translation:
                 print "\tThat's right!"
                 correct_answers += 1
-
+                # Update word only if user found the translation.
+                self.repo.update_timestamp(self.words[i])
                 reply = raw_input("\n\tAnd what's it's class (noun, verb, etc...)?$ ")
 
                 if reply.lower().strip() == w_class:
