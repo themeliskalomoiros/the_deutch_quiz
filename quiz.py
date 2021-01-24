@@ -9,32 +9,32 @@ class QuizRepository(object):
 
     def __init__(self):
         all_words = WordRepository().get_words()
-        self.stats = self.get_sorted_stats(all_words)
-        self.words = self.get_quiz_words(all_words)
+        self.word_frequencies = self.get_sorted_frequencies(all_words)
+        self.words = self.init_words(all_words)
 
-    def get_sorted_stats(self, all_words):
-        stats = self.load_stats_from_file('quiz.json')
-        self.synchronize_stats(all_words, stats)
-        return sorted(stats.items(), key = lambda s:s[1], reverse = True)
+    def get_sorted_frequencies(self, all_words):
+        frequencies = self.load_frequencies('quiz.json')
+        self.synchronize_frequencies(all_words, frequencies)
+        return sorted(frequencies.items(), key = lambda s:s[1], reverse = True)
 
-    def load_stats_from_file(self, file_name):
+    def load_frequencies(self, file_name):
         with open(file_name, 'r') as file:
             raw_json = file.read().decode('utf8')
             return json.loads(raw_json)
 
-    def synchronize_stats(self, words, stats):
+    def synchronize_frequencies(self, words, stats):
+        """Add zero frequencies for new words."""
         if len(words) > len(stats):
             for w in words:
                 if not w.text in stats:
-                    # set a default value for every word that does not exist in quiz.json
                     stats[w.text] = 0
 
-    def get_quiz_words(self, all_words):
+    def init_words(self, all_words):
         words = []
         for i in range(0, 6):
-            s = self.stats[i]
+            f = self.word_frequencies[i]
             for w in all_words:
-                if w.text == s[0]:
+                if w.text == f[0]:
                     words.append(w)
                     break
         return words
