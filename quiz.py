@@ -5,26 +5,20 @@ from random import shuffle
 from words import WordRepository
 
 
-class Quiz(object):
+class QuizRepository(object):
 
     def __init__(self):
-        # that is a list of Word objects.
         all_words = WordRepository().get_words()
-        # that is a dictionary with word.text: times_shown
-        word_stats = self.get_word_stats()
-        self.synchronize_stats(all_words, word_stats)
-        # sorted list of tupples in the form (Word.text, times_shown)
-        word_stats_list = sorted(word_stats.items(), key = lambda x:x[1], reverse = True)
-        self.words = []
-        for i in range(0, 6):
-            word_stat = word_stats_list[i]
-            for w in all_words:
-                if w.text == word_stat[0]:
-                    self.words.append(w)
-                    break
+        self.stats = self.get_sorted_stats(all_words)
+        self.words = self.get_quiz_words(all_words)
 
-    def get_word_stats(self):
-        with open('quiz.json', 'r') as file:
+    def get_sorted_stats(self, all_words):
+        stats = self.load_stats_from_file('quiz.json')
+        self.synchronize_stats(all_words, stats)
+        return sorted(stats.items(), key = lambda s:s[1], reverse = True)
+
+    def load_stats_from_file(self, file_name):
+        with open(file_name, 'r') as file:
             raw_json = file.read().decode('utf8')
             return json.loads(raw_json)
 
@@ -34,6 +28,23 @@ class Quiz(object):
                 if not w.text in stats:
                     # set a default value for every word that does not exist in quiz.json
                     stats[w.text] = 0
+
+    def get_quiz_words(self, all_words):
+        words = []
+        for i in range(0, 6):
+            s = self.stats[i]
+            for w in all_words:
+                if w.text == s[0]:
+                    words.append(w)
+                    break
+        return words
+
+
+class Quiz(object):
+
+    def __init__(self):
+        self.repo = QuizRepository()
+        self.words = self.repo.words
 
     def start(self):
         print "\n*********************************"
